@@ -1,6 +1,6 @@
 # George Broughton
 
-Location: [Kippax, Leeds, West Yorkshire](https://www.google.com/maps/search/?api=1&query=53.7746767%2C-1.375459)
+Location: [Kippax, Leeds, West Yorkshire](https://www.google.com/maps/search/?api=1&query=53.7746767%2C-1.375459)  
 EMail: [george.daniel.broughton@outlook.com](MAILTO:george.daniel.broughton@outlook.com)  
 Mobile: [+44 (0) 7487 245 012](TEL:+447487245012)  
 LinkedIn: [linkedin.com/in/george-broughton](https://www.linkedin.com/in/george-broughton/)  
