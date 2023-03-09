@@ -2,11 +2,12 @@
 
 # George Broughton 
 
-Location: [Kippax, Leeds, West Yorkshire](https://www.google.com/maps/search/?api=1&query=53.7746767%2C-1.375459)  
+Location: Kippax, Leeds, West Yorkshire
+[Click for transport availability](https://www.google.com/maps/dir/?api=1&origin=LS25+7DU&destination=Your+Location&travelmode=transit&dir_action=navigate)  
 EMail: [george.daniel.broughton@outlook.com](MAILTO:george.daniel.broughton@outlook.com)  
 Mobile: [07487 245 012](TEL:07487245012)  
 
-[<img src="assets/linkedin.svg" width="30"/>](https://www.linkedin.com/in/george-broughton/) [<img src="assets/square-github.svg" width="30"/>](https://github.com/GeorgeBroughton)
+[<img src="assets/square-phone-solid.svg" width="30"/>](TEL:07487245012) [<img src="assets/square-envelope-solid.svg" width="30"/>](MAILTO:george.daniel.broughton@outlook.com) [<img src="assets/linkedin.svg" width="30"/>](https://www.linkedin.com/in/george-broughton/) [<img src="assets/square-github.svg" width="30"/>](https://github.com/GeorgeBroughton)
 
 ## Profile
 I am a highly motivated young professional with over 10 years experience in various IT roles. During my career I have been involved in development work; computer repair; first, second and third line support roles; IT Service Delivery and Robotic Process Automation. 
