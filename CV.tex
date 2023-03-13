@@ -1,9 +1,8 @@
+\LoadClass[optionlist]{cv}
+
 \documentclass{report}
 
-\title{Curriculum Vitae}
-\author{George Broughton}
-
-\usepackage[a4paper, total={7in, 10in}]{geometry}
+\usepackage[a4paper, total={7in, 10.3in}]{geometry}
 \usepackage{multicol}
 \usepackage{qrcode}
 \usepackage{hyperref}
@@ -28,70 +27,125 @@
 \setlength{\parindent}{0pt}
 \renewcommand{\labelitemi}{-}
 
-\begin{document}
+\DeclareRobustCommand\name[1]{\gdef\vname{#1}}
+\DeclareRobustCommand\emailaddress[1]{\gdef\vemail{#1}}
+\DeclareRobustCommand\linkedinuser[1]{\gdef\vlinkedin{#1}}
+\DeclareRobustCommand\githubuser[1]{\gdef\vgithub{#1}}
+\DeclareRobustCommand\telephonenumber[1]{\gdef\vtelephone{#1}}
+
+\name{George Broughton}
+\telephonenumber{07487 245 012}
+\emailaddress{george.daniel.broughton@outlook.com}
+\githubuser{GeorgeBroughton}
+\linkedinuser{george-broughton}
+
+\newcommand\cvIconLink[3]{%
+	\begin{LARGE}%
+		\href{#1}{#2} %
+	\end{LARGE}%
+	\raisebox{0.5ex}{\normalsize #3} %
+}
+\newcommand\cvIcon[2]{%
+	\begin{LARGE}%
+		\href{#1}{#2} %
+	\end{LARGE}%
+}
+
+\newcommand\gghorizontalline{\noindent\rule{\textwidth}{0.4pt}}
+\newcommand\Linkedin{\cvIcon{https://www.linkedin.com/in/\vlinkedin}{\faLinkedinSquare}}
+\newcommand\GitHub{\cvIcon{https://github.com/\vgithub}{\faGithubSquare}}
+\newcommand\email{\cvIconLink{MAILTO:\vemail}{\faEnvelopeSquare}{\vemail}}
+\newcommand\telephone{\cvIconLink{TEL:\vtelephone}{\faPhoneSquare}{\vtelephone}}
+\newcommand\ptDirectionsToMe[2]{\cvIconLink{https://www.google.com/maps/dir/?api=1&origin=#1&destination=Your+Location&travelmode=transit&dir_action=navigate}{\faMapMarker}{#2}}
+\newcommand\ptDirectionsFromMe[2]{\cvIconLink{https://www.google.com/maps/dir/?api=1&origin=Your+Location&destination=#1&travelmode=transit&dir_action=navigate}{\faMapMarker}{#2}}
+
+\newcommand\makeheader{%
 	\begin{minipage}{0.8\textwidth}\raggedright
 		\begin{Huge}
-			\textbf{George Broughton}
-			\newline
-		\end{Huge}
-		\newline
-		\newline
-		\LARGE
-		\topskip0pt
-			\href{https://www.linkedin.com/in/george-broughton}{\faLinkedinSquare}
-			\href{https://github.com/GeorgeBroughton}{\faGithubSquare}
-			\href{MAILTO:george.daniel.broughton@outlook.com}{\faEnvelopeSquare} \raisebox{.3ex}{\normalsize george.daniel.broughton@outlook.com}
-			\href{TEL:07487245012}{\faPhoneSquare} \raisebox{.3ex}{\normalsize 07487 245 012}
-			\href{https://www.google.com/maps/dir/?api=1&origin=LS25+7DU&destination=Your+Location&travelmode=transit&dir_action=navigate}{\faMapMarker} \raisebox{.3ex}{\normalsize LS25 7DU}
-			\newline
-			\newline
+			\textbf{\vname}
+		\end{Huge}%
+			\hfill \cvIconLink{https://raw.githubusercontent.com/GeorgeBroughton/CV/main/CV.pdf}{\faRefresh}{See latest version}
+			\vskip 0.4em
+			\Linkedin
+			\GitHub
+			\email
+			\telephone
+			\ptDirectionsToMe{LS25+7DU}{LS25 7DU}
+			\vskip 0.25em
 			\tiny Some links in this document may not work due to differences in URL support between PDF readers.
 	\end{minipage}%
 	\hfill%
 	\begin{minipage}{0.9in}\centering
 		\qrcode[height=0.9in,level=M,nolink]{MECARD:N:Broughton,George;NOTE:Scanned from CV;TEL:07487245012;EMAIL:george.daniel.broughton@outlook.com;;}
-		\newline
-		\newline
+		\vskip 0.25em
 		\footnotesize Contact Info
 	\end{minipage}
-	
-	\section*{Profile}
+}
+
+\newcommand\skillsection[2]{
+	\begin{LARGE}
+		#1
+	\end{LARGE}
+	\hfill
+	\begin{normalsize}
+		#2
+	\end{normalsize}
+	\noindent\rule{\textwidth}{0.4pt}
+}
+
+\newcommand\experience[2]{
+	\begin{LARGE}
+		#1
+	\end{LARGE}
+	\hfill
+	\begin{normalsize}
+		#2
+	\end{normalsize}
+	\noindent\rule{\textwidth}{0.4pt}
+}
+
+\usepackage{xcolor}
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+\begin{document}
+	\makeheader
+	\section*{\faUser \nobreakspace Profile}
 		I am a highly motivated young professional with over 10 years experience in various IT roles.
 		During my career I have been involved in development work; computer repair; first,
 		second and third line support roles; IT Service Delivery and Robotic Process Automation.
-	
-	\section*{Core Skills}
-		\begin{multicols}{3}
-			ITIL 4\\
-			Continual Service Improvement\\
-			Customer Management\\
-			Stakeholder Management\\
-			Incident Management\\
-			SLA and KPI Adherence\\
-			Reporting\\
-			Value-Stream Mapping\\
-			Agile Methodologies\\
-			DevOps Practices\\
-			LEAN Principles\\
-			Microsoft 365\\
-			Windows Server\\
-			Linux\\
-			Virtual Desktop Infrastructure\\
-			Virtual Machines\\
-			Application Containers\\
-			Network Infrastructure\\
-			Storage Area Networks\\
-			Telephony Infrastructure\\
-			Automation
-		\end{multicols}
-		
-		\subsection*{Ticketing Systems}
+
+		\subsection*{\faUsers \nobreakspace Soft Skills}
 			\begin{multicols}{3}
+				ITIL 4\\
+				Continual Service Improvement\\
+				Customer Management\\
+				Stakeholder Management\\
+				Incident Management\\
+				SLA and KPI Adherence\\
+				Reporting\\
+				Value-Stream Mapping\\
+				Agile Methodologies\\
+				DevOps Practices\\
+				LEAN Principles
+			\end{multicols}
+		
+		\subsection*{\faWrench \nobreakspace Core Skills}
+			\begin{multicols}{3}
+				Automation\\
+				Windows Server 2000 - 2019\\
+				Linux (RHEL/CentOS/Fedora)\\
+				Virtual Desktop Infrastructure\\
+				Virtual Machines\\
+				Application Containers (Docker)\\
+				Network Infrastructure\\
+				Storage Area Networks\\
+				Telephony Infrastructure\\
+				Microsoft 365\\
 				ServiceNow\\
 				Assyst
 			\end{multicols}
 		
-		\subsection*{Languages}
+		\subsection*{\faKeyboardO \nobreakspace Languages}
 			\begin{multicols}{3}
 				Powershell\\
 				Batch\\
@@ -106,17 +160,17 @@
 				LaTeX \begin{tiny}this document was written in it\end{tiny}\\
 				Markdown
 			\end{multicols}
+			
+	\section*{\faBriefcase \nobreakspace Experience}
+		\subsection*{\faUser \nobreakspace IT Consultant}
+			Freelance \hfill Apr 2022 $\rightarrow$ Present
 	
-	\section*{Current Status}
-		Freelance Development / Support\\
-		Apr 2022 $\rightarrow$ Present
-	
-		\subsection*{Overview}
+		\subsubsection*{Overview}
 			Over the last year I have been providing freelance services in a range of specialisations.
 			This includes the configuration of software, assistance with the installation of specialised
 			hardware and the development of automation solutions to optimise complex processes.
 		
-		\subsection*{Key Responsibilities}
+		\subsubsection*{Key Responsibilities}
 			\begin{multicols}{3}
 				Automation\\
 				Customer Support\\
@@ -126,25 +180,28 @@
 				Telephony Infrastructure
 			\end{multicols}
 	
-		\subsection*{Achievements / Projects}
+		\subsubsection*{Achievements / Projects}
 			\begin{itemize}
 				\setlength\itemsep{0pt}
 				\item Following thorough research, I created a custom chat bot for a popular social media platform
 				\item Developed a custom tool for transcoding video to aid a client's workflow
-				\item Learned how to set up a PBX and write custom Asterisk AGI scripts for automatic call routing and messaging
+				\item Learnt how to set up a PBX and write custom Asterisk AGI scripts for automatic call routing and messaging
 			\end{itemize}
 
 	\newpage
 	
-	\section*{Previous Experience}
-		\subsection*{Technical Services Engineer (3rd Line)}
-			Fujitsu Services\\
-			Aug 2020 $\rightarrow$ Apr 2022 (1 year, 9 months)
+	\subsection*{\faServer \nobreakspace Technical Services Engineer (3rd Line)}
+		Fujitsu Services \hfill Aug 2020 $\rightarrow$ Apr 2022
 
+%		\subsubsection*{Overview}
+%			I was hired to provide 3rd line diagnostics \& support for Microsoft 365 services.
+%			It involved the deployment of apps to client computers, fixing complex and high priority incidents.
+%			I developed a number of automations in this role to alleviate the burden of repetetive work.
+%
 		\subsubsection*{Key Responsibilities}
 			\begin{itemize}
 				\setlength\itemsep{0pt}
-				\item Diagnosing faults with Microsoft 365
+				\item Microsoft 365
 				\item Automation
 				\item SLA and KPI Adherence
 				\item Deployment of cloud software (Microsoft Office 365 \& Microsoft Teams)
@@ -159,10 +216,14 @@
 				\item Automated the rollout of fixes to widespread issues that required end-user interaction, to the point it needed near-zero interaction from us
 			\end{itemize}
 
-	\subsection*{Customer Service Technician (1st Line)}
-		Kelly Services $\rightarrow$ Fujitsu Services\\
-		Oct 2017 $\rightarrow$ Aug 2020 (2 years, 11 months)
+	\subsection*{\faPhone \nobreakspace Customer Service Technician (1st Line)}
+		Kelly Services $\rightarrow$ Fujitsu Services \hfill Oct 2017 $\rightarrow$ Aug 2020
 
+%		\subsubsection*{Overview}
+%			We were contracting contracting for a client with strict security recuirements.
+%			We dealt with over 200 bespoke business applications which included managing virtual desktop infrastructure.
+%			
+%
 		\subsubsection*{Key Responsibilities}
 			\begin{itemize}
 				\setlength\itemsep{0pt}
